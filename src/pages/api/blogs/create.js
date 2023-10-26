@@ -5,7 +5,7 @@ const connectMongoDB = async () => {
     await mongoose.connect("mongodb+srv://ppqita:santri@ppqitadb.dada60q.mongodb.net/dev",
       {
         useNewUrlParser: true,
-        useUnifiedTopology: true,
+        useUnifiedTopology: true,   
       }
     );
   } catch (error) {}
@@ -14,7 +14,7 @@ const connectMongoDB = async () => {
 connectMongoDB();
 
 const Post = mongoose.model(
-  "blogs",
+  "blog",
   new mongoose.Schema({
     title: {
       type: String,
@@ -29,7 +29,7 @@ const Post = mongoose.model(
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    res.status(405).json({ error: true, message: "mehtod tidak diijinkan" });
+    return res.status(405).json({ error: true, message: "mehtod tidak diijinkan" });
   }
 
   const { title, content } = req.body;
