@@ -41,7 +41,7 @@ export default function Home() {
           alt="Next.js Logo"
           width={180}
           height={37}
-          priority
+          priority  
         /> */}
         <h1 className='text-5xl'>Ahmad Danesh Sudiono</h1>
       </div>
